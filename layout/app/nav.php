@@ -46,7 +46,7 @@ if(isset($_SESSION['user'])){
 <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -59,20 +59,30 @@ if(isset($_SESSION['user'])){
         </div>
     </div>
 </nav> -->
-<?php
+    <?php
 }else{
-?>
-<header class="mb-auto">
-    <div>
-        <h3 class="float-md-start mb-0 text-uppercase logo fw-bolder logo">
+    ?>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+        <a class="navbar-brand text-uppercase fw-bold fs-4" href="/">
             <?=$config['app']['name']?>
-        </h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#service">Services</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#contact">Contact</a>
-            <a class="nav-link fw-bold py-1 px-0 btn-link" data-type="auth" data-link="login" href="#">Login</a>
-        </nav>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/booking">Book Now</a>
+            </div>
+            <button class="btn btn-dark btn-sm rounded-5 mr-auto bt-link" data-link="auth" type="button">
+                Sign in
+            </button>
+        </div>
     </div>
-</header>
+</nav>
 <?php } ?>

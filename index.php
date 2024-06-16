@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontawesome-free-6.2.1@6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="<?=$config['flp']['css']?>main.css">
+    <!-- <link rel="stylesheet" href="<?=$config['flp']['css']?>main.css"> -->
+    <link rel="stylesheet" href="<?=$config['flp']['css']?>app.css">
 
 
     <!-- Scripts(Jquery, Bootstrap Bundle)  -->
@@ -27,41 +28,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body id="main-app">
-    <div class="container-fluid p-0 m-0">
-        <div class="container-fluid p-0 m-0">
-            <?php if(isset($_SESSION['user'])){
-            if($_SESSION['user']['logged'] > 0){?>
-
-            <div class="row">
-                <div class="sidebar col-md-3 col-sm-4 p-0" id="sidebar">
-                    <?php require_once 'layout/app/sidebar.php'?>
-                </div>
-                <div class="content col-md-9 col-sm-8 p-0" id="content">
-                    <?php require_once 'admin.php'?>
-                </div>
-            </div>
-
-            <?php
-            }else{
-                    include_once 'welcome.php';
-            }
-        }
-           else{
-               include_once 'auth.php';
-           }
+<body>
+    <header>
+        <?php require_once './layout/app/nav.php';?>
+    </header>
+    <main class="container-fluid p-0 m-0" id="main-app">
+        <?php
+            include_once 'home.php';
+            include_once 'auth.php';
         ?>
-        </div>
+    </main>
 
-        <footer class="mt-auto text-center pt-3">
-            <p>
-                <?=$config['app']['full'] ?> &copy;<?= date('Y')?>
-            </p>
-        </footer>
+    <footer class="mt-auto text-center pt-3">
+        <p>
+            <?=$config['app']['full'] ?> &copy;<?= date('Y')?>
+        </p>
+    </footer>
 
 
-        <script src="<?=$config['flp']['js']?>/main.js"></script>
-        <script src="<?=$config['flp']['js']?>/auth.js"></script>
+    <script src="<?=$config['flp']['js']?>/main.js"></script>
+    <script src="<?=$config['flp']['js']?>/auth.js"></script>
 </body>
 
 </html>

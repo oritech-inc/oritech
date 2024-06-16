@@ -9,7 +9,8 @@ $config = array(
     'img'=>array(
         'logo'=>'assets/images/app/logo/',
         'icon'=>'assets/images/app/icon/',
-        'card'=>'assets/images/app/cards/',
+        'slide'=>'assets/images/slide/',
+        'book'=>'assets/images/app/book/',
     ),
     'flp'=>array(
         'incl'=>'incl/',
